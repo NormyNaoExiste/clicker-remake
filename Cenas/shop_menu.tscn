@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bhaxgpb7g1kec"]
+
+[ext_resource type="Shader" uid="uid://c16phvva5rsor" path="res://Shaders/pattern.gdshader" id="1_mj1cc"]
+[ext_resource type="Texture2D" uid="uid://dxnj4xag1srn" path="res://Assets/TiledShaderBG.png" id="2_qnbw0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j75dt"]
+shader = ExtResource("1_mj1cc")
+shader_parameter/speed = -0.2
+shader_parameter/direction = 0.1
+
+[node name="ShopMenu" type="Control" unique_id=1088958588]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopBG" type="TextureRect" parent="." unique_id=1944508202]
+modulate = Color(0.82309955, 0.36126068, 0.30096874, 1)
+material = SubResource("ShaderMaterial_j75dt")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qnbw0")
+stretch_mode = 1
+
+[node name="ShopDialogBox" type="Panel" parent="." unique_id=1530066601]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.80300003
+anchor_right = 0.82500005
+anchor_bottom = 0.994
+offset_top = 0.039978027
+offset_bottom = -0.08001709
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopSidePanel" type="Panel" parent="." unique_id=1416510449]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.841
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.23999023
+offset_top = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

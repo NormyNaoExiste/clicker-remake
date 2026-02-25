@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://tpu3lta83myo"]
+
+[ext_resource type="Texture2D" uid="uid://gihp0yl8xseg" path="res://Assets/Ball.png" id="1_5n27r"]
+[ext_resource type="Shader" uid="uid://c16phvva5rsor" path="res://Shaders/pattern.gdshader" id="1_ovbra"]
+[ext_resource type="Script" uid="uid://bwo8sn6qbc03v" path="res://Scripts/Principal/Clicker.gd" id="1_xmmbr"]
+[ext_resource type="Texture2D" uid="uid://dsfucvfv66g6d" path="res://Assets/Shop.png" id="2_03mvh"]
+[ext_resource type="Texture2D" uid="uid://dxnj4xag1srn" path="res://Assets/TiledShaderBG.png" id="2_reiul"]
+[ext_resource type="Script" uid="uid://dvjboovdtakrw" path="res://Scripts/Módulos/TextureButtonModule.gd" id="5_xmmbr"]
+[ext_resource type="FontFile" uid="uid://ha7fphex75yq" path="res://Fontes/GrapeSoda.ttf" id="7_p2wm8"]
+[ext_resource type="PackedScene" uid="uid://bhaxgpb7g1kec" path="res://Cenas/shop_menu.tscn" id="8_p2wm8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p2wm8"]
+shader = ExtResource("1_ovbra")
+shader_parameter/speed = 0.1
+
+[sub_resource type="LabelSettings" id="LabelSettings_r4inx"]
+font = ExtResource("7_p2wm8")
+font_size = 30
+
+[node name="Jogo" type="Control" unique_id=1654170905]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xmmbr")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1657015888]
+modulate = Color(0.20812604, 0.72157353, 0.7891663, 1)
+z_index = -2
+material = SubResource("ShaderMaterial_p2wm8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_reiul")
+stretch_mode = 1
+
+[node name="BotãoPrincipal" type="CenterContainer" parent="." unique_id=1222693609]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bola" type="TextureButton" parent="BotãoPrincipal" unique_id=1382934692]
+layout_mode = 2
+texture_normal = ExtResource("1_5n27r")
+script = ExtResource("5_xmmbr")
+
+[node name="ShopButton" type="TextureButton" parent="." unique_id=1730863142]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.034
+anchor_top = 0.35900003
+anchor_right = 0.134
+anchor_bottom = 0.559
+offset_left = 0.23999786
+offset_top = 0.11999512
+offset_right = 0.23999786
+offset_bottom = 0.11999512
+grow_vertical = 2
+texture_normal = ExtResource("2_03mvh")
+texture_pressed = ExtResource("2_03mvh")
+script = ExtResource("5_xmmbr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ShopButton" unique_id=1463193526]
+modulate = Color(0.42365062, 0.42365065, 0.42365062, 1)
+z_index = -1
+position = Vector2(31, 32)
+scale = Vector2(1.2460938, 1.2460938)
+texture = ExtResource("2_03mvh")
+
+[node name="MoedasLabel" type="Label" parent="." unique_id=613262782]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.393375
+anchor_right = 0.522
+anchor_bottom = 0.125
+offset_left = 0.23999023
+offset_top = 1.0
+offset_right = -0.08001709
+offset_bottom = -8.0
+text = "0"
+label_settings = SubResource("LabelSettings_r4inx")
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopMenu" parent="." unique_id=1088958588 instance=ExtResource("8_p2wm8")]
+visible = false
+layout_mode = 1
+
+[node name="ShopSideButtons" type="VBoxContainer" parent="ShopMenu" unique_id=954783632]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8469063
+anchor_top = 0.05279503
+anchor_right = 0.996875
+anchor_bottom = 0.946875
+offset_left = -0.0200001
+offset_right = -1.0
+offset_bottom = 16.0
+theme_override_constants/separation = 45
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitShop" type="Button" parent="ShopMenu/ShopSideButtons" unique_id=444626896]
+layout_mode = 2
+text = "Sair"
+
+[node name="UpdateShop" type="Button" parent="ShopMenu/ShopSideButtons" unique_id=1207897531]
+layout_mode = 2
+text = "Atualizar"
+
+[node name="Label" type="Label" parent="ShopMenu" unique_id=1359675226]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036000002
+anchor_top = 0.81900007
+anchor_right = 0.809
+anchor_bottom = 0.96900004
+offset_left = -0.040000916
+offset_top = -0.08001709
+offset_right = 0.23999023
+offset_bottom = -0.08001709
+text = "Dialogue box for upgrades
+"
+
+[connection signal="pressed" from="BotãoPrincipal/Bola" to="." method="_on_bola_pressed"]
+[connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="ShopMenu/ShopSideButtons/ExitShop" to="." method="_on_exit_shop_pressed"]
