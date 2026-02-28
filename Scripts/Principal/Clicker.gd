@@ -2,6 +2,7 @@ extends Control
 
 @onready var moedasLabel: Label = $MoedasLabel
 @onready var shop_menu: Control = $ShopMenu
+@onready var fadeAnim: AnimationPlayer = $Fade/AnimationPlayer
 
 var shop:bool = false
 
@@ -11,7 +12,7 @@ var ganho:int = 1
 func _init() -> void:
 	shop = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	moedasLabel.text = str("Moedas:", moedas)
 	if !shop:
 		shop_menu.hide()
@@ -20,6 +21,8 @@ func _on_bola_pressed() -> void:
 
 
 func _on_shop_button_pressed() -> void:
+	fadeAnim.play("fade_out")
+	await fadeAnim.animation_finished
 	if !shop:
 		shop_menu.visible = true
 	shop = true
