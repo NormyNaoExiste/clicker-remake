@@ -21,14 +21,18 @@ func _on_bola_pressed() -> void:
 
 
 func _on_shop_button_pressed() -> void:
-	fadeAnim.play("fade_out")
+	fadeAnim.play("fade_in")
 	await fadeAnim.animation_finished
+	fadeAnim.play("fade_out")
 	if !shop:
 		shop_menu.visible = true
 	shop = true
 
 
 func _on_exit_shop_pressed() -> void:
+	fadeAnim.play("fade_in")
+	await fadeAnim.animation_finished
+	fadeAnim.play("fade_out")
 	if shop:
 		shop_menu.hide()
 	shop = false

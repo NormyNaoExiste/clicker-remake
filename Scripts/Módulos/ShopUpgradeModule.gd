@@ -15,12 +15,14 @@ func _ready() -> void:
 	mouse_exited.connect(_on_mouse_exited)
 	call_deferred("_init_pivot")
 
+
 func _init_pivot():
 	pivot_offset = size/2
 
 func _on_mouse_entered():
 	get_tree().create_tween().tween_property(self, "scale", hover_scale, time).set_trans(Tween.TRANS_SINE)
 	shop_dialogue.text = str(upgrade_text)
+
 
 func _on_mouse_exited():
 	get_tree().create_tween().tween_property(self, "scale", INITIAL_SCALE, time).set_trans(Tween.TRANS_SINE)
