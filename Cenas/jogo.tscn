@@ -193,7 +193,6 @@ upgrade_text = "Upgrade 3"
 metadata/_edit_use_anchors_ = true
 
 [node name="Fade" parent="." unique_id=312639957 instance=ExtResource("10_0iqwg")]
-visible = false
 z_index = 37
 layout_mode = 1
 mouse_filter = 2
