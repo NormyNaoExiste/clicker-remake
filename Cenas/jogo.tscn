@@ -144,7 +144,7 @@ offset_top = 0.08000183
 offset_right = 0.1599884
 offset_bottom = 0.16000366
 script = ExtResource("9_r4inx")
-upgrade_text = "Upgrade 1"
+upgrade_text = "Banana"
 metadata/_edit_use_anchors_ = true
 
 [node name="BuyButton" type="Button" parent="ShopMenu/ShopUpgradeSlot1" unique_id=67401261]
