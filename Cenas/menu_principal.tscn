@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://ckjld6abg33fv"]
+
+[ext_resource type="Script" uid="uid://c38iybrwlaxa0" path="res://Scripts/Principal/MenuPrincipal.gd" id="1_vi81c"]
+[ext_resource type="Shader" uid="uid://c16phvva5rsor" path="res://Shaders/pattern.gdshader" id="1_xc8du"]
+[ext_resource type="Texture2D" uid="uid://bx0xcbxp18y8m" path="res://Assets/TiledShaderBG2.png" id="2_qa2y2"]
+[ext_resource type="FontFile" uid="uid://hovjmv3j7rtg" path="res://Fontes/upheavtt.ttf" id="3_qa2y2"]
+[ext_resource type="Script" uid="uid://co45m23t5j7u4" path="res://Scripts/Módulos/NormalButtonModule.gd" id="4_7f1x0"]
+[ext_resource type="LabelSettings" uid="uid://b3x0f4nps7pdm" path="res://Recursos/Titulo.tres" id="4_qb56n"]
+[ext_resource type="PackedScene" uid="uid://c1d21pv3a3lxf" path="res://Cenas/fade.tscn" id="7_6c1me"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7f1x0"]
+shader = ExtResource("1_xc8du")
+shader_parameter/speed = -0.23
+shader_parameter/direction = 0.1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qa2y2"]
+bg_color = Color(0.78891855, 0.27911383, 0.30477133, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5573529, 0.16906133, 0.19461027, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7f1x0"]
+bg_color = Color(0.5568628, 0.16862746, 0.19607843, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.42271224, 0.117769144, 0.1398268, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="MenuPrincipal" type="Control" unique_id=1072070693]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vi81c")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=595550340]
+modulate = Color(0.56735593, 0.8077953, 0.59263223, 1)
+material = SubResource("ShaderMaterial_7f1x0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qa2y2")
+stretch_mode = 1
+
+[node name="RichTextLabel" type="Label" parent="." unique_id=1730865176]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.20500001
+anchor_top = 0.15300001
+anchor_right = 0.78900003
+anchor_bottom = 0.28100002
+offset_left = -0.2000122
+offset_top = 0.0399971
+offset_right = 0.039978027
+offset_bottom = 0.0799942
+grow_horizontal = 2
+grow_vertical = 2
+text = "CLICKER REMAKE"
+label_settings = ExtResource("4_qb56n")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=298114053]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.370125
+anchor_top = 0.49087507
+anchor_right = 0.637125
+anchor_bottom = 0.84075004
+offset_left = 0.11999512
+offset_top = -0.08000946
+offset_right = 0.23999023
+offset_bottom = -0.040008545
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=1862611984]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.8645035, 0.33497667, 0.36035636, 1)
+theme_override_colors/font_hover_color = Color(0.94409376, 0.5365209, 0.53646326, 1)
+theme_override_fonts/font = ExtResource("3_qa2y2")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_qa2y2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7f1x0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qa2y2")
+text = "Jogar"
+script = ExtResource("4_7f1x0")
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=497346196]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.8645035, 0.33497667, 0.36035636, 1)
+theme_override_colors/font_hover_color = Color(0.94409376, 0.5365209, 0.53646326, 1)
+theme_override_fonts/font = ExtResource("3_qa2y2")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_qa2y2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7f1x0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qa2y2")
+text = "Opções"
+script = ExtResource("4_7f1x0")
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=603978639]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.8645035, 0.33497667, 0.36035636, 1)
+theme_override_colors/font_hover_color = Color(0.94409376, 0.5365209, 0.53646326, 1)
+theme_override_fonts/font = ExtResource("3_qa2y2")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_qa2y2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7f1x0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qa2y2")
+text = "Sair"
+script = ExtResource("4_7f1x0")
+
+[node name="Fade" parent="." unique_id=312639957 instance=ExtResource("7_6c1me")]
+z_index = 37
+layout_mode = 0
+anchors_preset = 0
+mouse_filter = 2
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]

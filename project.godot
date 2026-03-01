@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=640
 window/size/viewport_height=320
 
+[gui]
+
+common/snap_controls_to_pixels=false
+
 [input]
 
 left_click={
