@@ -11,13 +11,21 @@ config_version=5
 [application]
 
 config/name="Clicker:REMAKE"
+config/description="Um jogo de clicks"
+config/version="0.1.1"
+run/main_scene="uid://ckjld6abg33fv"
 config/features=PackedStringArray("4.6", "Mobile")
+boot_splash/show_image=false
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=320
+window/size/mode=3
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [gui]
 
@@ -39,3 +47,4 @@ left_click={
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

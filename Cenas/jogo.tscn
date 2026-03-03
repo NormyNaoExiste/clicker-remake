@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dsfucvfv66g6d" path="res://Assets/Shop.png" id="2_03mvh"]
 [ext_resource type="Texture2D" uid="uid://dxnj4xag1srn" path="res://Assets/TiledShaderBG.png" id="2_reiul"]
 [ext_resource type="Script" uid="uid://dvjboovdtakrw" path="res://Scripts/Módulos/TextureButtonModule.gd" id="5_xmmbr"]
-[ext_resource type="FontFile" uid="uid://ha7fphex75yq" path="res://Fontes/GrapeSoda.ttf" id="7_p2wm8"]
+[ext_resource type="FontFile" uid="uid://hovjmv3j7rtg" path="res://Fontes/upheavtt.ttf" id="7_0ekxr"]
 [ext_resource type="PackedScene" uid="uid://bhaxgpb7g1kec" path="res://Cenas/shop_menu.tscn" id="8_p2wm8"]
 [ext_resource type="Script" uid="uid://bs4axo3iyohki" path="res://Scripts/Módulos/ShopUpgradeModule.gd" id="9_r4inx"]
 [ext_resource type="PackedScene" uid="uid://c1d21pv3a3lxf" path="res://Cenas/fade.tscn" id="10_0iqwg"]
@@ -19,8 +19,10 @@ shader_parameter/speed = 0.1
 shader_parameter/direction = 0.1
 
 [sub_resource type="LabelSettings" id="LabelSettings_r4inx"]
-font = ExtResource("7_p2wm8")
+font = ExtResource("7_0ekxr")
 font_size = 30
+outline_size = 8
+outline_color = Color(0.28252545, 0.49561065, 0.47621107, 1)
 
 [node name="Jogo" type="Control" unique_id=1654170905]
 layout_mode = 3
@@ -96,6 +98,7 @@ label_settings = SubResource("LabelSettings_r4inx")
 metadata/_edit_use_anchors_ = true
 
 [node name="ShopMenu" parent="." unique_id=1088958588 instance=ExtResource("8_p2wm8")]
+visible = false
 layout_mode = 1
 
 [node name="ShopSideButtons" type="VBoxContainer" parent="ShopMenu" unique_id=954783632]

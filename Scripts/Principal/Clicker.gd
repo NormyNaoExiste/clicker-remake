@@ -9,6 +9,10 @@ var shop:bool = false
 var moedas:int = 0
 var ganho:int = 1
 
+
+func _ready() -> void:
+	fadeAnim.play("fade_out")
+
 func _init() -> void:
 	shop = false
 
