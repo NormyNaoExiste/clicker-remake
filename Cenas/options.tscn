@@ -8,6 +8,22 @@ shader = ExtResource("1_odqpe")
 shader_parameter/speed = 0.1
 shader_parameter/direction = 0.1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odqpe"]
+bg_color = Color(0.3322943, 0.4911238, 0.63520294, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.252805, 0.38807157, 0.51257044, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 12
+shadow_color = Color(0, 0, 0, 0.62352943)
+shadow_size = 5
+shadow_offset = Vector2(6, 6)
+
 [node name="Options" type="Control" unique_id=1221094280]
 layout_mode = 3
 anchors_preset = 15
@@ -45,3 +61,4 @@ offset_right = 0.14001465
 offset_bottom = 13.419983
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_odqpe")
