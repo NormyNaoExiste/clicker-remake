@@ -18,6 +18,59 @@ shader = ExtResource("1_ovbra")
 shader_parameter/speed = 0.1
 shader_parameter/direction = 0.1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ekxr"]
+bg_color = Color(0.92636025, 0.42428523, 0.34932873, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.76332843, 0.3290556, 0.28147703, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.5529412)
+shadow_size = 1
+shadow_offset = Vector2(13.76, 5.15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6akw"]
+bg_color = Color(0.42544186, 0.6710291, 0.42784587, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.30856797, 0.5735849, 0.38415033, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pkuu"]
+bg_color = Color(0.21176365, 0.36525014, 0.21498117, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.30856797, 0.5735849, 0.38415033, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4aojw"]
+bg_color = Color(0.52245384, 0.7851805, 0.52518994, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.30856797, 0.5735849, 0.38415033, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4aojw"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_r4inx"]
 font = ExtResource("7_0ekxr")
 font_size = 30
@@ -55,11 +108,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Bola" type="TextureButton" parent="BotãoPrincipal" unique_id=1382934692]
+texture_filter = 1
 layout_mode = 2
 texture_normal = ExtResource("1_5n27r")
 script = ExtResource("5_xmmbr")
 
 [node name="ShopButton" type="TextureButton" parent="." unique_id=1730863142]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.034
@@ -82,20 +137,6 @@ z_index = -1
 position = Vector2(31, 32)
 scale = Vector2(1.2460938, 1.2460938)
 texture = ExtResource("2_03mvh")
-
-[node name="MoedasLabel" type="Label" parent="." unique_id=613262782]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.393375
-anchor_right = 0.522
-anchor_bottom = 0.125
-offset_left = 0.23999023
-offset_top = 1.0
-offset_right = -0.08001709
-offset_bottom = -8.0
-text = "0"
-label_settings = SubResource("LabelSettings_r4inx")
-metadata/_edit_use_anchors_ = true
 
 [node name="ShopMenu" parent="." unique_id=1088958588 instance=ExtResource("8_p2wm8")]
 visible = false
@@ -147,6 +188,7 @@ offset_left = -0.040008545
 offset_top = 0.08000183
 offset_right = 0.1599884
 offset_bottom = 0.16000366
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ekxr")
 script = ExtResource("9_r4inx")
 upgrade_text = "Banana"
 metadata/_edit_use_anchors_ = true
@@ -162,6 +204,10 @@ offset_left = 0.023999691
 offset_top = 0.027999878
 offset_right = -0.043006897
 offset_bottom = 0.0039978027
+theme_override_styles/normal = SubResource("StyleBoxFlat_n6akw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3pkuu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4aojw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4aojw")
 text = "Buy"
 script = ExtResource("10_j7fpx")
 metadata/_edit_use_anchors_ = true
@@ -190,6 +236,7 @@ offset_left = 0.039978027
 offset_top = -0.040008545
 offset_right = -0.11999512
 offset_bottom = -0.08001709
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ekxr")
 script = ExtResource("9_r4inx")
 upgrade_text = "Upgrade 2"
 metadata/_edit_use_anchors_ = true
@@ -205,6 +252,9 @@ offset_left = 0.023999691
 offset_top = 0.027999878
 offset_right = -0.043006897
 offset_bottom = 0.0039978027
+theme_override_styles/normal = SubResource("StyleBoxFlat_n6akw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3pkuu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4aojw")
 text = "Buy"
 script = ExtResource("10_j7fpx")
 metadata/_edit_use_anchors_ = true
@@ -220,6 +270,7 @@ offset_left = 0.27996826
 offset_top = -0.040008545
 offset_right = 0.23999023
 offset_bottom = 0.07998657
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ekxr")
 script = ExtResource("9_r4inx")
 upgrade_text = "Upgrade 3"
 metadata/_edit_use_anchors_ = true
@@ -235,8 +286,26 @@ offset_left = 0.023999691
 offset_top = 0.027999878
 offset_right = -0.043006897
 offset_bottom = 0.0039978027
+theme_override_styles/normal = SubResource("StyleBoxFlat_n6akw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3pkuu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4aojw")
 text = "Buy"
 script = ExtResource("10_j7fpx")
+metadata/_edit_use_anchors_ = true
+
+[node name="MoedasLabel" type="Label" parent="." unique_id=613262782]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.393375
+anchor_right = 0.522
+anchor_bottom = 0.125
+offset_left = 0.23999023
+offset_top = 1.0
+offset_right = -0.08001709
+offset_bottom = -8.0
+text = "0"
+label_settings = SubResource("LabelSettings_r4inx")
 metadata/_edit_use_anchors_ = true
 
 [node name="Fade" parent="." unique_id=312639957 instance=ExtResource("10_0iqwg")]

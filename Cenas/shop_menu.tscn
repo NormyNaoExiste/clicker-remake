@@ -8,6 +8,21 @@ shader = ExtResource("1_mj1cc")
 shader_parameter/speed = -0.2
 shader_parameter/direction = 0.1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj1cc"]
+bg_color = Color(0.92636025, 0.42428523, 0.34932873, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.76332843, 0.3290556, 0.28147703, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_color = Color(0, 0, 0, 0.57254905)
+shadow_size = 6
+shadow_offset = Vector2(0, 7.11)
+
 [node name="ShopMenu" type="Control" unique_id=1088958588]
 layout_mode = 3
 anchors_preset = 15
@@ -37,6 +52,7 @@ anchor_right = 0.82500005
 anchor_bottom = 0.994
 offset_top = 0.039978027
 offset_bottom = -0.08001709
+theme_override_styles/panel = SubResource("StyleBoxFlat_mj1cc")
 metadata/_edit_use_anchors_ = true
 
 [node name="ShopSidePanel" type="Panel" parent="." unique_id=1416510449]
@@ -50,4 +66,5 @@ offset_top = -1.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mj1cc")
 metadata/_edit_use_anchors_ = true

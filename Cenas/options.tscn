@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://vpqxm3utcwty"]
+
+[ext_resource type="Shader" uid="uid://c16phvva5rsor" path="res://Shaders/pattern.gdshader" id="1_odqpe"]
+[ext_resource type="Texture2D" uid="uid://b48w836oq2ap7" path="res://Assets/TiledShaderBGBolt.png" id="2_g0240"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7cans"]
+shader = ExtResource("1_odqpe")
+shader_parameter/speed = 0.1
+shader_parameter/direction = 0.1
+
+[node name="Options" type="Control" unique_id=1221094280]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=914423309]
+modulate = Color(0.4370762, 0.60820985, 0.7364383, 1)
+material = SubResource("ShaderMaterial_7cans")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_g0240")
+expand_mode = 1
+stretch_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="." unique_id=1032021882]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.126
+anchor_top = 0.064
+anchor_right = 0.874
+anchor_bottom = 0.89400005
+offset_left = -0.13999939
+offset_top = 0.01999855
+offset_right = 0.14001465
+offset_bottom = 13.419983
+grow_horizontal = 2
+grow_vertical = 2

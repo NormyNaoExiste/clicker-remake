@@ -4,7 +4,7 @@
 
 [resource]
 font = ExtResource("1_oj8ul")
-font_size = 45
+font_size = 29
 outline_size = 22
 outline_color = Color(0.28627452, 0.3372549, 0.33333334, 1)
 shadow_size = 44
