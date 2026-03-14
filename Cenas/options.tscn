@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://vpqxm3utcwty"]
 
+[ext_resource type="Script" uid="uid://0l1ap7a72ood" path="res://Scripts/Principal/settings.gd" id="1_7cans"]
 [ext_resource type="Shader" uid="uid://c16phvva5rsor" path="res://Shaders/pattern.gdshader" id="1_odqpe"]
 [ext_resource type="Texture2D" uid="uid://b48w836oq2ap7" path="res://Assets/TiledShaderBGBolt.png" id="2_g0240"]
+[ext_resource type="FontFile" uid="uid://bje034f8yf3kg" path="res://Fontes/alagard.ttf" id="3_g0240"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7cans"]
 shader = ExtResource("1_odqpe")
@@ -24,6 +26,39 @@ shadow_color = Color(0, 0, 0, 0.62352943)
 shadow_size = 5
 shadow_offset = Vector2(6, 6)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13eo4"]
+content_margin_left = 28.0
+content_margin_right = 28.0
+bg_color = Color(0.33333334, 0.49019608, 0.63529414, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_color = Color(0.2509804, 0.3882353, 0.5137255, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa5kg"]
+content_margin_left = 28.0
+content_margin_right = 28.0
+bg_color = Color(0.37983793, 0.54287755, 0.6943034, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_color = Color(0.2509804, 0.3882353, 0.5137255, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cw41a"]
+content_margin_left = 28.0
+content_margin_right = 28.0
+bg_color = Color(0.29288477, 0.44317353, 0.5809024, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_color = Color(0.2509804, 0.3882353, 0.5137255, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+
 [node name="Options" type="Control" unique_id=1221094280]
 layout_mode = 3
 anchors_preset = 15
@@ -31,6 +66,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7cans")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=914423309]
@@ -48,17 +84,79 @@ stretch_mode = 1
 flip_h = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="." unique_id=1032021882]
+[node name="TabContainer" type="TabContainer" parent="." unique_id=675351998]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.126
-anchor_top = 0.064
-anchor_right = 0.874
-anchor_bottom = 0.89400005
-offset_left = -0.13999939
-offset_top = 0.01999855
-offset_right = 0.14001465
-offset_bottom = 13.419983
+anchor_left = 0.128
+anchor_top = 0.05
+anchor_right = 0.88400006
+anchor_bottom = 0.94400007
+offset_left = 0.0799942
+offset_right = 0.23999023
+offset_bottom = -0.08001709
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.22352941, 0.3529412, 0.47058824, 1)
+theme_override_constants/side_margin = 12
+theme_override_constants/tab_separation = 7
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_g0240")
 theme_override_styles/panel = SubResource("StyleBoxFlat_odqpe")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_13eo4")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_oa5kg")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_cw41a")
+current_tab = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Video" type="TabBar" parent="TabContainer" unique_id=2025072768]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Resolution" type="OptionButton" parent="TabContainer/Video" unique_id=1299565249]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.741453
+anchor_top = 0.036437247
+anchor_right = 0.98700005
+anchor_bottom = 0.162
+offset_right = 0.083984375
+offset_bottom = -0.013999939
+selected = 0
+item_count = 4
+popup/item_0/text = "640x320"
+popup/item_0/id = 0
+popup/item_1/text = "1280x720"
+popup/item_1/id = 1
+popup/item_2/text = "1600x900"
+popup/item_2/id = 2
+popup/item_3/text = "1920x1080"
+popup/item_3/id = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Fullscreen" type="CheckBox" parent="TabContainer/Video" unique_id=2012011402]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75000006
+anchor_top = 0.178
+anchor_right = 0.97900003
+anchor_bottom = 0.30400002
+offset_left = -3.0517578e-05
+offset_top = 0.034000397
+offset_right = -0.17202759
+offset_bottom = -0.088005066
+text = "Fullscreen"
+
+[node name="Audio" type="TabBar" parent="TabContainer" unique_id=1227514500]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Misc" type="TabBar" parent="TabContainer" unique_id=75325149]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[connection signal="item_selected" from="TabContainer/Video/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="toggled" from="TabContainer/Video/Fullscreen" to="." method="_on_fullscreen_toggled"]

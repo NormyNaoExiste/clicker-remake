@@ -21,7 +21,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 shadow_color = Color(0, 0, 0, 0.57254905)
 shadow_size = 6
-shadow_offset = Vector2(0, 7.11)
+shadow_offset = Vector2(6, 7.11)
 
 [node name="ShopMenu" type="Control" unique_id=1088958588]
 layout_mode = 3
@@ -44,6 +44,7 @@ texture = ExtResource("2_qnbw0")
 stretch_mode = 1
 
 [node name="ShopDialogBox" type="Panel" parent="." unique_id=1530066601]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.025
@@ -56,6 +57,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_mj1cc")
 metadata/_edit_use_anchors_ = true
 
 [node name="ShopSidePanel" type="Panel" parent="." unique_id=1416510449]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.841
