@@ -13,7 +13,8 @@ extends Control
 var opt:bool = false
 
 func _ready() -> void:
-
+	fadeAnim.play("fade_out")
+	
 	play_button.pressed.connect(_on_play_pressed)
 	options_button.pressed.connect(_on_options_pressed)
 

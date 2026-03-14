@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b4skus0yk6cjq" path="res://Assets/lowkeyblu-export.png" id="1_ivi7e"]
 [ext_resource type="LabelSettings" uid="uid://b3x0f4nps7pdm" path="res://Recursos/Titulo.tres" id="2_cay42"]
 [ext_resource type="Texture2D" uid="uid://ch7r6l024jble" path="res://Assets/lowkeyblusmile-export.png" id="3_my4ec"]
+[ext_resource type="PackedScene" uid="uid://c1d21pv3a3lxf" path="res://Cenas/fade.tscn" id="5_my4ec"]
 
 [sub_resource type="Animation" id="Animation_rwp8t"]
 length = 0.001
@@ -138,6 +139,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.17541772, 0.2207607, 0.37301263, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2016140690]
 modulate = Color(1, 1, 1, 0)
@@ -176,3 +178,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1281565869]
 libraries/ = SubResource("AnimationLibrary_wocx5")
+
+[node name="Fade" parent="." unique_id=312639957 instance=ExtResource("5_my4ec")]
+layout_mode = 1
