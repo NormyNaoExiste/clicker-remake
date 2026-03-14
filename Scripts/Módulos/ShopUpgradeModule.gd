@@ -1,7 +1,7 @@
 extends Panel
 
 @onready var shop_dialogue: Label = $"../ShopDialogue"
-const DIALOGUE_DEFAULT: String = "Dialogue box for upgrades"
+
 
 @export var upgrade_text: String
 
@@ -22,11 +22,12 @@ func _init_pivot():
 func _on_mouse_entered():
 	get_tree().create_tween().tween_property(self, "scale", hover_scale, time).set_trans(Tween.TRANS_SINE)
 	shop_dialogue.text = str(upgrade_text)
+	shop_dialogue.show()
 
 
 func _on_mouse_exited():
 	get_tree().create_tween().tween_property(self, "scale", INITIAL_SCALE, time).set_trans(Tween.TRANS_SINE)
-	shop_dialogue.text = DIALOGUE_DEFAULT
+	shop_dialogue.hide()
 func _pressed():
 	var tween = create_tween()
 	tween.tween_property(self, "scale", pressed_scale, time).set_trans(Tween.TRANS_SINE)

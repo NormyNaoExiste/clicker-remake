@@ -156,10 +156,13 @@ theme_override_constants/separation = 45
 metadata/_edit_use_anchors_ = true
 
 [node name="ExitShop" type="Button" parent="ShopMenu/ShopSideButtons" unique_id=444626896]
+texture_filter = 3
 layout_mode = 2
 text = "Sair"
 
 [node name="UpdateShop" type="Button" parent="ShopMenu/ShopSideButtons" unique_id=1207897531]
+texture_filter = 3
+texture_repeat = 2
 layout_mode = 2
 text = "Atualizar"
 
@@ -190,7 +193,6 @@ offset_right = 0.1599884
 offset_bottom = 0.16000366
 theme_override_styles/panel = SubResource("StyleBoxFlat_0ekxr")
 script = ExtResource("9_r4inx")
-upgrade_text = "Banana"
 metadata/_edit_use_anchors_ = true
 
 [node name="BuyButton" type="Button" parent="ShopMenu/ShopUpgradeSlot1" unique_id=67401261]
@@ -294,7 +296,7 @@ script = ExtResource("10_j7fpx")
 metadata/_edit_use_anchors_ = true
 
 [node name="MoedasLabel" type="Label" parent="." unique_id=613262782]
-texture_filter = 1
+texture_filter = 3
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.393375

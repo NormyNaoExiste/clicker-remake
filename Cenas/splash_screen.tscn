@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://p6tk8vt0xo5u"]
+
+[ext_resource type="Script" uid="uid://jo7363e87uk2" path="res://Scripts/Principal/splash_screen.gd" id="1_cay42"]
+[ext_resource type="Texture2D" uid="uid://b4skus0yk6cjq" path="res://Assets/lowkeyblu-export.png" id="1_ivi7e"]
+[ext_resource type="LabelSettings" uid="uid://b3x0f4nps7pdm" path="res://Recursos/Titulo.tres" id="2_cay42"]
+[ext_resource type="Texture2D" uid="uid://ch7r6l024jble" path="res://Assets/lowkeyblusmile-export.png" id="3_my4ec"]
+
+[sub_resource type="Animation" id="Animation_rwp8t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_ivi7e")]
+}
+
+[sub_resource type="Animation" id="Animation_6bovs"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6d7y3"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sgniu"]
+resource_name = "smile"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.39999998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_ivi7e"), ExtResource("3_my4ec")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wocx5"]
+_data = {
+&"RESET": SubResource("Animation_rwp8t"),
+&"fade_in": SubResource("Animation_6bovs"),
+&"fade_out": SubResource("Animation_6d7y3"),
+&"smile": SubResource("Animation_sgniu")
+}
+
+[node name="SplashScreen" type="Control" unique_id=885403438]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cay42")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1725846447]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.17541772, 0.2207607, 0.37301263, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2016140690]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24700001
+anchor_top = 0.35000002
+anchor_right = 0.397
+anchor_bottom = 0.65000004
+offset_left = 27.919998
+offset_top = 27.999992
+offset_right = -28.080017
+offset_bottom = -28.000015
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ivi7e")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=344258636]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.42618752
+anchor_top = 0.44962502
+anchor_right = 0.7766875
+anchor_bottom = 0.575
+offset_left = 0.23999023
+offset_top = 0.11999512
+offset_right = -0.08001709
+offset_bottom = 2.0
+text = "Lowkey Games"
+label_settings = ExtResource("2_cay42")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1281565869]
+libraries/ = SubResource("AnimationLibrary_wocx5")

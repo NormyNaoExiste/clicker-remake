@@ -13,11 +13,11 @@ config_version=5
 config/name="Clicker:REMAKE"
 config/description="Um jogo de clicks"
 config/version="0.1.1"
-run/main_scene="uid://ckjld6abg33fv"
+run/main_scene="uid://p6tk8vt0xo5u"
 config/features=PackedStringArray("4.6", "Mobile")
 boot_splash/show_image=false
 boot_splash/use_filter=false
-config/icon="uid://chut61xfyavul"
+config/icon="uid://dy6n38ow8k12m"
 
 [display]
 
