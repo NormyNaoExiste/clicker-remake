@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c1d21pv3a3lxf" path="res://Cenas/fade.tscn" id="10_0iqwg"]
 [ext_resource type="Script" uid="uid://wdun4ksyiy5s" path="res://Scripts/Botões/BuyUpgradeButton.gd" id="10_j7fpx"]
 [ext_resource type="Texture2D" uid="uid://c4i2s0d4xu2cv" path="res://Assets/banana.png" id="11_0ekxr"]
+[ext_resource type="Texture2D" uid="uid://dij352v1s7u4w" path="res://Assets/cog.png" id="13_3pkuu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2wm8"]
 shader = ExtResource("1_ovbra")
@@ -70,6 +71,11 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4aojw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n6akw"]
+font = ExtResource("7_0ekxr")
+outline_size = 7
+outline_color = Color(0.19328687, 0.47863412, 0.5786003, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_r4inx"]
 font = ExtResource("7_0ekxr")
@@ -138,8 +144,33 @@ position = Vector2(31, 32)
 scale = Vector2(1.2460938, 1.2460938)
 texture = ExtResource("2_03mvh")
 
+[node name="Config" type="TextureButton" parent="." unique_id=1087339017]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.878
+anchor_top = 0.753
+anchor_right = 0.97800004
+anchor_bottom = 0.95300007
+offset_left = 0.079956055
+offset_top = 0.039993286
+offset_right = 0.079956055
+offset_bottom = 0.039978027
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("13_3pkuu")
+texture_pressed = ExtResource("13_3pkuu")
+script = ExtResource("5_xmmbr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Config" unique_id=37957874]
+modulate = Color(0.50140655, 0.5014065, 0.5014065, 1)
+z_index = -1
+position = Vector2(32, 32)
+scale = Vector2(1.246, 1.246)
+texture = ExtResource("13_3pkuu")
+
 [node name="ShopMenu" parent="." unique_id=1088958588 instance=ExtResource("8_p2wm8")]
-visible = false
 layout_mode = 1
 
 [node name="ShopSideButtons" type="VBoxContainer" parent="ShopMenu" unique_id=954783632]
@@ -193,6 +224,7 @@ offset_right = 0.1599884
 offset_bottom = 0.16000366
 theme_override_styles/panel = SubResource("StyleBoxFlat_0ekxr")
 script = ExtResource("9_r4inx")
+upgrade_name = "Banana"
 metadata/_edit_use_anchors_ = true
 
 [node name="BuyButton" type="Button" parent="ShopMenu/ShopUpgradeSlot1" unique_id=67401261]
@@ -226,6 +258,22 @@ metadata/_edit_use_anchors_ = true
 [node name="Upgrade1" type="TextureRect" parent="ShopMenu/ShopUpgradeSlot1/UpgradeIconCont1" unique_id=147959862]
 layout_mode = 2
 texture = ExtResource("11_0ekxr")
+
+[node name="Upgrade1Level" type="Label" parent="ShopMenu/ShopUpgradeSlot1" unique_id=2051966230]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.294
+anchor_top = 0.39600003
+anchor_right = 0.734
+anchor_bottom = 0.545
+offset_left = -0.046001434
+offset_top = 0.015995026
+offset_right = -8.006004
+offset_bottom = 0.069999695
+text = "LVL: 0"
+label_settings = SubResource("LabelSettings_n6akw")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ShopUpgradeSlot2" type="Panel" parent="ShopMenu" unique_id=406801228]
 layout_mode = 1
@@ -261,6 +309,16 @@ text = "Buy"
 script = ExtResource("10_j7fpx")
 metadata/_edit_use_anchors_ = true
 
+[node name="Upgrade2Level" type="Label" parent="ShopMenu/ShopUpgradeSlot2" unique_id=623018123]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 61.0
+offset_right = 72.0
+offset_bottom = 84.0
+text = "0"
+label_settings = SubResource("LabelSettings_n6akw")
+horizontal_alignment = 1
+
 [node name="ShopUpgradeSlot3" type="Panel" parent="ShopMenu" unique_id=181903543]
 layout_mode = 1
 anchors_preset = -1
@@ -294,6 +352,16 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_4aojw")
 text = "Buy"
 script = ExtResource("10_j7fpx")
 metadata/_edit_use_anchors_ = true
+
+[node name="Upgrade3Level" type="Label" parent="ShopMenu/ShopUpgradeSlot3" unique_id=1335784055]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 61.0
+offset_right = 72.0
+offset_bottom = 84.0
+text = "0"
+label_settings = SubResource("LabelSettings_n6akw")
+horizontal_alignment = 1
 
 [node name="MoedasLabel" type="Label" parent="." unique_id=613262782]
 texture_filter = 3

@@ -2,8 +2,9 @@ extends Panel
 
 @onready var shop_dialogue: Label = $"../ShopDialogue"
 
-
+@export var upgrade_name: String
 @export var upgrade_text: String
+@export var upgrade_price: int
 
 @export var hover_scale: Vector2 = Vector2(1.1, 1.1)
 @export var pressed_scale: Vector2 = Vector2(0.9, 0.9)
