@@ -165,7 +165,10 @@ func _on_resumir_pressed() -> void:
 		print(upgrades_disponiveis)
 
 func _on_sair_pressed() -> void:
-	SaveManager.save(upgrades_disponiveis)
+	salvar()
 	fadeAnim.play("fade_in")
 	await fadeAnim.animation_finished
 	get_tree().change_scene_to_file("res://Cenas/menu_principal.tscn")
+
+func salvar():
+	SaveManager.save(upgrades_disponiveis)
