@@ -15,12 +15,23 @@ extends Control
 @onready var upgrade_2_level: Label = $ShopMenu/ShopUpgradeSlot2/Upgrade2Level
 @onready var upgrade_3_level: Label = $ShopMenu/ShopUpgradeSlot3/Upgrade3Level
 
+#options
+@onready var options_screen: Panel = $OptionsScreen
+@onready var options_panel: Panel = $OptionsScreen/Options
+@onready var v_box_container: VBoxContainer = $OptionsScreen/Options/VBoxContainer
+@onready var resumir: Button = $OptionsScreen/Options/VBoxContainer/Resumir
+@onready var opcoes: Button = $OptionsScreen/Options/VBoxContainer/Opcoes
+@onready var sair: Button = $OptionsScreen/Options/VBoxContainer/Sair
+@onready var rich_text_label: RichTextLabel = $OptionsScreen/Options/RichTextLabel
+
 
 var upgrades_disponiveis:Array = []
 var upgrades
 
 var shop:bool = false
 var shop_slot1_comprado = false
+var options:bool = false
+
 
 var moedas:int = 0
 
@@ -31,6 +42,7 @@ var ganho_total:int:
 var multiplicador:int = 1
 
 func _ready() -> void:
+	SaveManager.read()
 	fadeAnim.play("fade_out")
 	_carregar_upgrades()
 	
@@ -68,6 +80,8 @@ func _comprar_upgrades(indice: int):
 	var upgrade = upgrades_disponiveis[indice]
 	var custo = upgrade.custo_base * (upgrade.nivel + 1)
 	
+	var novo_custo = upgrade.custo_base * (upgrade.nivel + 1)
+	
 	if moedas >= custo:
 		moedas -= custo
 		upgrade.nivel += 1
@@ -75,10 +89,13 @@ func _comprar_upgrades(indice: int):
 		match upgrade.tipo:
 			"clique":
 				ganho += upgrade.modificador
+				novo_custo = upgrade.custo_base * (upgrade.nivel + 1)
 			"multiplicador":
 				multiplicador *= upgrade.modificador
+				custo = upgrade.custo_base * (upgrade.nivel * upgrade.nivel)
+				novo_custo = upgrade.custo_base * (upgrade.nivel * 4)
 		
-		var novo_custo = upgrade.custo_base * (upgrade.nivel + 1)
+		
 		
 		match indice:
 			0:
@@ -88,7 +105,11 @@ func _comprar_upgrades(indice: int):
 				shop_upgrade_slot_1.upgrade_price = novo_custo
 				
 			1:
-				upgrade_2_level.text = str(upgrade.nivel)
+				upgrade_2_level.text = str("LVL: ", upgrade.nivel)
+				shop_upgrade_slot_2.upgrade_text = str(
+					"Cubo está dando: x", upgrade.modificador, " ao seu clique"
+				)
+				shop_upgrade_slot_2.upgrade_price = novo_custo
 				
 		print("Sucesso")
 	else:
@@ -99,11 +120,14 @@ func _atualizar_textos_shop():
 
 func _init() -> void:
 	shop = false
+	options = false
 
 func _process(_delta: float) -> void:
 	moedasLabel.text = str("Moedas:", moedas)
 	if !shop:
 		shop_menu.hide()
+	if !options:
+		options_screen.hide()
 
 
 func _on_bola_pressed() -> void:
@@ -127,3 +151,21 @@ func _on_exit_shop_pressed() -> void:
 	if shop:
 		shop_menu.hide()
 	shop = false
+
+
+func _on_config_pressed() -> void:
+	if !options:
+		options_screen.show()
+		options = true
+
+func _on_resumir_pressed() -> void:
+	if options:
+		options_screen.hide()
+		options = false
+		print(upgrades_disponiveis)
+
+func _on_sair_pressed() -> void:
+	SaveManager.save(upgrades_disponiveis)
+	fadeAnim.play("fade_in")
+	await fadeAnim.animation_finished
+	get_tree().change_scene_to_file("res://Cenas/menu_principal.tscn")

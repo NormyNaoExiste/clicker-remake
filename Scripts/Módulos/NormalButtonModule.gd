@@ -30,4 +30,7 @@ func _on_mouse_exited():
 func _on_pressed():
 	var tween = create_tween()
 	tween.tween_property(self, "scale", pressed_scale, time).set_trans(transition_s)
-	tween.tween_property(self, "scale", hover_scale, time) .set_trans(transition_s)
+	if self.is_hovered():
+		tween.tween_property(self, "scale", hover_scale, time) .set_trans(transition_s)
+	else:
+		tween.tween_property(self, "scale", INICIAL_SCALE, time) .set_trans(transition_s)

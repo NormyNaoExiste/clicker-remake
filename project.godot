@@ -19,6 +19,10 @@ boot_splash/show_image=false
 boot_splash/use_filter=false
 config/icon="uid://dy6n38ow8k12m"
 
+[autoload]
+
+SaveManager="*uid://r7qljjxil3h4"
+
 [display]
 
 window/size/viewport_width=640
