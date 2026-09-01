@@ -14,7 +14,7 @@ config/name="Clicker:REMAKE"
 config/description="Um jogo de clicks"
 config/version="0.1.1"
 run/main_scene="uid://p6tk8vt0xo5u"
-config/features=PackedStringArray("4.6", "Mobile")
+config/features=PackedStringArray("4.7", "Mobile")
 boot_splash/show_image=false
 boot_splash/use_filter=false
 config/icon="uid://dy6n38ow8k12m"
@@ -41,6 +41,10 @@ left_click={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(565, 15),"global_position":Vector2(574, 63),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 

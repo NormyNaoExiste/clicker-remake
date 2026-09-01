@@ -3,6 +3,8 @@ extends Control
 @onready var fadeAnim: AnimationPlayer = $Fade/AnimationPlayer
 @onready var timer: Timer = $Fade/Timer
 
+@onready var timer_botao: Timer = $TouchScreenButton/Timer
+
 
 @onready var options: Control = $Options
 
@@ -11,6 +13,8 @@ extends Control
 @onready var options_button: Button = $VBoxContainer/Options
 
 var opt:bool = false
+
+var cancelar_link = false
 
 func _ready() -> void:
 	fadeAnim.play("fade_out")
@@ -46,3 +50,16 @@ func _on_quit_pressed() -> void:
 	fadeAnim.play("fade_in")
 	await fadeAnim.animation_finished
 	get_tree().quit()
+
+
+func _on_touch_screen_button_pressed() -> void:
+	timer_botao.start()
+	cancelar_link = true
+
+
+
+func _on_timer_timeout() -> void:
+	if not cancelar_link:
+		OS.shell_open("https://github.com/NormyNaoExiste/clicker-remake")
+		timer_botao.stop()
+	cancelar_link = false
