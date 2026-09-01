@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Clicker:REMAKE"
 config/description="Um jogo de clicks"
-config/version="0.1.1"
+config/version="0.1.5e"
 run/main_scene="uid://p6tk8vt0xo5u"
 config/features=PackedStringArray("4.7", "Mobile")
 boot_splash/show_image=false
