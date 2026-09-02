@@ -22,6 +22,7 @@ config/icon="uid://dy6n38ow8k12m"
 [autoload]
 
 SaveManager="*uid://r7qljjxil3h4"
+DisplayNumber="*uid://dur4wvdt8kfln"
 
 [display]
 
@@ -29,6 +30,10 @@ window/size/viewport_width=640
 window/size/viewport_height=320
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/Lucas/Documents/JogoDoDavizinho/Godot/clicker-remake/videos/debug.avi"
 
 [gui]
 

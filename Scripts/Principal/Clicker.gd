@@ -4,6 +4,12 @@ extends Control
 @onready var shop_menu: Control = $ShopMenu
 @onready var fadeAnim: AnimationPlayer = $Fade/AnimationPlayer
 
+#orbital
+@onready var orbital_itens: Node2D = $BotãoPrincipal/OrbitalItens
+var orb_banana = preload("res://Cenas/banana.tscn")
+
+@onready var display_number: Node2D = $BotãoPrincipal/Bola/DisplayNumber
+
 #shop
 @onready var buy_button: Button = $ShopMenu/ShopUpgradeSlot1/BuyButton
 @onready var buy_button_2: Button = $ShopMenu/ShopUpgradeSlot2/BuyButton2
@@ -103,6 +109,8 @@ func _comprar_upgrades(indice: int):
 				shop_upgrade_slot_1.upgrade_text = str(
 					"Banana está dando: +", ganho, " por clique")
 				shop_upgrade_slot_1.upgrade_price = novo_custo
+				var new_banana = orb_banana.instantiate()
+				orbital_itens.add_child(new_banana)
 				
 			1:
 				upgrade_2_level.text = str("LVL: ", upgrade.nivel)
@@ -132,6 +140,7 @@ func _process(_delta: float) -> void:
 
 func _on_bola_pressed() -> void:
 	moedas += ganho_total
+	DisplayNumber.display_numbers(ganho_total, display_number.position)
 
 
 func _on_shop_button_pressed() -> void:

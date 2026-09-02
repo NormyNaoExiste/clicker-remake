@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dxnj4xag1srn" path="res://Assets/TiledShaderBG.png" id="2_reiul"]
 [ext_resource type="Script" uid="uid://dvjboovdtakrw" path="res://Scripts/Módulos/TextureButtonModule.gd" id="5_xmmbr"]
 [ext_resource type="FontFile" uid="uid://hovjmv3j7rtg" path="res://Fontes/upheavtt.ttf" id="7_0ekxr"]
+[ext_resource type="Script" uid="uid://dyba67mnupmu3" path="res://Scripts/Sistemas/Orbital.gd" id="7_4aojw"]
 [ext_resource type="PackedScene" uid="uid://bhaxgpb7g1kec" path="res://Cenas/shop_menu.tscn" id="8_p2wm8"]
 [ext_resource type="Script" uid="uid://bs4axo3iyohki" path="res://Scripts/Módulos/ShopUpgradeModule.gd" id="9_r4inx"]
 [ext_resource type="PackedScene" uid="uid://c1d21pv3a3lxf" path="res://Cenas/fade.tscn" id="10_0iqwg"]
@@ -151,6 +152,13 @@ texture_filter = 1
 layout_mode = 2
 texture_normal = ExtResource("1_5n27r")
 script = ExtResource("5_xmmbr")
+
+[node name="DisplayNumber" type="Node2D" parent="BotãoPrincipal/Bola" unique_id=357439547]
+position = Vector2(206, 111)
+
+[node name="OrbitalItens" type="Node2D" parent="BotãoPrincipal" unique_id=1257436975]
+position = Vector2(319, 160)
+script = ExtResource("7_4aojw")
 
 [node name="ShopButton" type="TextureButton" parent="." unique_id=1730863142]
 texture_filter = 1
@@ -413,6 +421,7 @@ label_settings = SubResource("LabelSettings_r4inx")
 metadata/_edit_use_anchors_ = true
 
 [node name="OptionsScreen" type="Panel" parent="." unique_id=1465400711]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
